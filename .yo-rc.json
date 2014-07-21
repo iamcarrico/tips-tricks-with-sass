@@ -1,0 +1,10 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Tips and Tricks with Sass",
+    "packageVersion": "1.0.0",
+    "useSass": true,
+    "deployToGithubPages": true,
+    "githubUsername": "iamcarrico",
+    "githubRepository": "tips-tricks-with-sass"
+  }
+}
