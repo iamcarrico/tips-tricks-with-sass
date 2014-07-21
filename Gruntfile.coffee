@@ -24,14 +24,10 @@ module.exports = (grunt) ->
                 ]
                 tasks: ['buildIndex']
 
-            coffeelint:
-                files: ['Gruntfile.coffee']
-                tasks: ['coffeelint']
-
             jshint:
                 files: ['js/*.js']
                 tasks: ['jshint']
-        
+
             sass:
                 files: ['css/source/theme.scss']
                 tasks: ['sass']
@@ -41,7 +37,7 @@ module.exports = (grunt) ->
             theme:
                 files:
                     'css/theme.css': 'css/source/theme.scss'
-        
+
         connect:
 
             livereload:
@@ -53,14 +49,6 @@ module.exports = (grunt) ->
                     base: '.'
                     open: true
                     livereload: true
-
-        coffeelint:
-
-            options:
-                indentation:
-                    value: 4
-
-            all: ['Gruntfile.coffee']
 
         jshint:
 
@@ -88,7 +76,7 @@ module.exports = (grunt) ->
                     filter: 'isFile'
                 }]
 
-        
+
         buildcontrol:
 
             options:
@@ -100,7 +88,7 @@ module.exports = (grunt) ->
                 options:
                     remote: 'git@github.com:iamcarrico/tips-tricks-with-sass.git'
                     branch: 'gh-pages'
-        
+
 
 
     # Load all grunt tasks.
@@ -124,7 +112,6 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'test',
         '*Lint* javascript and coffee files.', [
-            'coffeelint'
             'jshint'
         ]
 
@@ -144,13 +131,13 @@ module.exports = (grunt) ->
             'copy'
         ]
 
-    
+
     grunt.registerTask 'deploy',
         'Deploy to Github Pages', [
             'dist'
             'buildcontrol'
         ]
-    
+
 
     # Define default task.
     grunt.registerTask 'default', [
