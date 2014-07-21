@@ -19,20 +19,22 @@
         },
         sass: {
           files: ['css/source/theme.scss'],
-          tasks: ['sass']
+          tasks: ['compass']
         }
       },
-      sass: {
+
+      compass: {
         theme: {
-          files: {
-            'css/theme.css': 'sass/theme.scss'
+          options: {
+            bundleExec: true,
+            config: 'config.rb'
           }
         }
       },
       connect: {
         livereload: {
           options: {
-            port: 9000,
+            port: 8230,
             hostname: 'localhost',
             base: '.',
             open: true,
@@ -111,7 +113,7 @@
       'Run presentation locally and start watch process (living document).',
       [
         'buildIndex',
-        'sass',
+        'compass',
         'connect:livereload',
         'watch'
       ]
@@ -121,7 +123,7 @@
       'Save presentation files to *dist* directory.',
       [
         'test',
-        'sass',
+        'compass',
         'buildIndex',
         'copy']
     );
