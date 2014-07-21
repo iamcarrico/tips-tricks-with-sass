@@ -42,10 +42,90 @@ $browser-minimum-versions: (
 
 body {
   background-color: #97e52d;
-  font-family: 'pt';
+  //font-family: 'pt';
   font-size: 2em;
 }
 
 * {
   text-rendering: optimizeLegibility;
+}
+
+
+.reveal {
+  blockquote {
+    border: none;
+    box-shadow: none;
+    text-align: right;
+    background: none;
+    border-right: .2em solid;
+    padding: 0 1em 0 0;
+
+    cite {
+      font-size: .75em;
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+
+  h1, h2, h3, h4, h5  {
+    a {
+      background-position: 0 0.825em !important;
+    }
+  }
+
+  pre {
+    font-size: 1em;
+
+    &.codemark {
+      box-shadow: none;
+      font-size: .55em;
+    }
+  }
+}
+
+.reveal .controls div.navigate {
+  $states: (
+    "intro": white
+  );
+
+  $dirs: (
+    left: right,
+    right: left,
+    up: bottom,
+    down: top
+  );
+
+  @each $dir, $border in $dirs {
+    &-#{$dir} {
+      @each $state, $color in $states {
+        .#{$state} & {
+          border-#{$border}-color: $color;
+        }
+      }
+    }
+  }
+}
+
+// Why? Because I want colors to be together.
+@mixin state-background {
+  .state-background {
+    @content;
+  }
+}
+
+.intro {
+  color: white;
+  @include state-background {
+    background: black;
+  }
+
 }
