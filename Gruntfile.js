@@ -53,7 +53,7 @@
           files: [
             {
               expand: true,
-              src: ['slides/**', 'bower_components/**', 'js/**', 'css/*.css'],
+              src: ['slides/**', 'bower_components/**', 'js/**', 'css/*.css', 'images/**'],
               dest: 'dist/'
             }, {
               expand: true,
