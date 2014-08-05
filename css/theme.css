@@ -3,6 +3,8 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+@import url(http://iamcarrico.github.io/fonts/pt.css);
+@import url(http://iamcarrico.github.io/fonts/newcicle.css);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -72,6 +74,7 @@ img, video {
 
 body {
   background-color: #97e52d;
+  font-family: "pt", Helvetica, Arial, sans-serif;
   font-size: 2em;
 }
 
@@ -97,6 +100,12 @@ body {
 .reveal a {
   color: inherit;
   text-decoration: none;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+  font-family: "New Cicle", Arial, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: normal;
 }
 .reveal h1 a, .reveal h2 a, .reveal h3 a, .reveal h4 a, .reveal h5 a {
   background-position: 0 0.825em !important;

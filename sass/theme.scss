@@ -39,10 +39,18 @@ $browser-minimum-versions: (
 @import "../bower_components/reveal.js/css/theme/template/settings";
 // ---------------------------------------------
 
+// Grab me some fonts.
+@import url(http://iamcarrico.github.io/fonts/pt.css);
+@import url(http://iamcarrico.github.io/fonts/newcicle.css);
+$newcicle: 'New Cicle', Arial, sans-serif;
+$pt: 'pt', Helvetica, Arial, sans-serif;
+
+
+
 
 body {
   background-color: #97e52d;
-  //font-family: 'pt';
+  font-family: $pt;
   font-size: 2em;
 }
 
@@ -77,6 +85,10 @@ body {
 
 
   h1, h2, h3, h4, h5  {
+    font-family: $newcicle;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: normal;
     a {
       background-position: 0 0.825em !important;
     }
