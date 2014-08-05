@@ -29,6 +29,12 @@
             bundleExec: true,
             config: 'config.rb'
           }
+        },
+        dist: {
+          options: {
+            bundleExec: true,
+            config: 'config.rb'
+          }
         }
       },
       connect: {
@@ -123,7 +129,7 @@
       'Save presentation files to *dist* directory.',
       [
         'test',
-        'compass',
+        'compass:dist',
         'buildIndex',
         'copy']
     );
