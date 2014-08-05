@@ -94,6 +94,10 @@ body {
     }
   }
 
+  h1 {
+    margin-bottom: .25em;
+  }
+
   pre {
     font-size: 1em;
 
@@ -101,6 +105,11 @@ body {
       box-shadow: none;
       font-size: .55em;
     }
+  }
+
+  .sass-logo {
+    max-width: 60%;
+    max-height: 60%;
   }
 }
 
@@ -131,6 +140,13 @@ body {
 @mixin state-background {
   .state-background {
     @content;
+  }
+}
+
+.sassy {
+  color: white;
+  @include state-background {
+    background: #c69;
   }
 }
 
