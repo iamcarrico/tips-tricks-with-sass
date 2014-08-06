@@ -42,10 +42,10 @@ $browser-minimum-versions: (
 // Grab me some fonts.
 @import url(http://iamcarrico.github.io/fonts/pt.css);
 @import url(http://iamcarrico.github.io/fonts/newcicle.css);
+
+
 $newcicle: 'New Cicle', Arial, sans-serif;
 $pt: 'pt', Helvetica, Arial, sans-serif;
-
-
 
 
 body {
@@ -94,7 +94,7 @@ body {
     }
   }
 
-  h1 {
+  h1, h2 {
     margin-bottom: .25em;
   }
 
@@ -107,6 +107,10 @@ body {
     }
   }
 
+  p {
+    margin-bottom: .75em;
+  }
+
   .sass-logo {
     max-width: 60%;
     max-height: 60%;
@@ -115,7 +119,9 @@ body {
 
 .reveal .controls div.navigate {
   $states: (
-    "intro": white
+    "intro": white,
+    "gulp": black,
+    "bundler": black
   );
 
   $dirs: (
@@ -136,24 +142,53 @@ body {
   }
 }
 
-// Why? Because I want colors to be together.
-@mixin state-background {
-  .state-background {
-    @content;
-  }
-}
+.state-background {
 
-.sassy {
-  color: white;
-  @include state-background {
-    background: #c69;
+  .alert .reveal & { // Extra class to override reveal.
+    background: rgba(200, 50, 30, 1);
   }
-}
 
-.intro {
-  color: white;
-  @include state-background {
+  .intro & {
     background: black;
   }
 
+  .sassy & {
+    background: #c69;
+  }
+
+  .rbenv & {
+    background: #2f2f2f;
+  }
+
+  .bundler & {
+    background: #c6e7ec;
+  }
+
+  .gulp & {
+    background: white;
+  }
+
+  .who & {
+    background: #0084B4; // Twitters
+  }
+}
+
+[data-state="sassy"],
+[data-state="rbenv"],
+[data-state="intro"] {
+  color: white;
+}
+
+// Twitters
+.reveal .twitter-peeps {
+  display: inline-block;
+  padding: 0 .4em 1em;
+
+  img {
+
+  }
+
+  a {
+    display: block;
+  }
 }

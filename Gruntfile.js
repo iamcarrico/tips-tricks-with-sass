@@ -18,7 +18,7 @@
           tasks: ['jshint']
         },
         sass: {
-          files: ['css/source/theme.scss'],
+          files: ['sass/theme.scss'],
           tasks: ['compass']
         }
       },
