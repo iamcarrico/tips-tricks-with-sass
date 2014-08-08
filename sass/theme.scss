@@ -123,7 +123,13 @@ body {
     max-width: 60%;
     max-height: 60%;
   }
+
+  .slides-link {
+    font-size: 2.5em;
+    margin-top: .5em;
+  }
 }
+
 
 .reveal .controls div.navigate {
   $states: (
