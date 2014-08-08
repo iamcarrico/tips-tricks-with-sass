@@ -16,7 +16,10 @@
   [@itsmisscs](https://twitter.com/itsmisscs)
 </div>
 
-<div class="twitter-peeps">
-  ![Jina](http://iamcarrico.github.io/tips-tricks-with-sass/images/twitters/jina.png)
+<div class="twitter-peeps">  ![Jina](http://iamcarrico.github.io/tips-tricks-with-sass/images/twitters/jina.png)
   [@jina](https://twitter.com/jina)
+</div>
+
+<div class="twitter-peeps">  ![Sass News Weekly](http://iamcarrico.github.io/tips-tricks-with-sass/images/twitters/SassNews.png)
+  [@SassNews](https://twitter.com/SassNews)
 </div>

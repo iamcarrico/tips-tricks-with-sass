@@ -42,6 +42,9 @@ $browser-minimum-versions: (
 // Grab me some fonts.
 @import url(http://iamcarrico.github.io/fonts/pt.css);
 @import url(http://iamcarrico.github.io/fonts/newcicle.css);
+// Just for North.
+@import url(http://snugug.github.io/fonts/north.css);
+@import url(http://snugug.github.io/fonts/homestead-subset.css);
 
 
 $newcicle: 'New Cicle', Arial, sans-serif;
@@ -85,13 +88,18 @@ body {
 
 
   h1, h2, h3, h4, h5  {
-    font-family: $newcicle;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    font-weight: normal;
+    &:not(.north) {
+      font-family: $newcicle;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: normal;
+
+    }
+
     a {
       background-position: 0 0.825em !important;
     }
+
   }
 
   h1, h2 {
@@ -121,7 +129,8 @@ body {
   $states: (
     "intro": white,
     "gulp": black,
-    "bundler": black
+    "bundler": black,
+    "north": #061b25,
   );
 
   $dirs: (
@@ -168,6 +177,14 @@ body {
     background: white;
   }
 
+  .gotchas & {
+    background: #fede32;
+  }
+
+  .north & {
+    background: #f7fafc;
+  }
+
   .who & {
     background: #0084B4; // Twitters
   }
@@ -190,5 +207,92 @@ body {
 
   a {
     display: block;
+  }
+}
+
+//// POINT NORTH STUFFS
+///
+
+
+.reveal .north {
+  @function white($color) {
+    @return adjust-color($color, $hue: 5.18797, $saturation: -8.82867, $lightness: 38.62745);
+  }
+
+  @function black($color) {
+    @return adjust-color($color, $hue: -0.76401, $saturation: 17.28533, $lightness: -50.78431);
+  }
+
+  @function secondary($color) {
+    @return adjust-color($color, $hue: 3.91813, $saturation: 21.24865, $lightness: -31.37255);
+  }
+
+  $primary: #5ea9d0;
+  $black: black($primary);
+  $white: white($primary);
+  $secondary: secondary($primary);
+
+  $background: $white;
+  $foreground: $black;
+  $thin: mix($white, $black, 80%);
+
+  @at-root {
+    %icon {
+      @include enable-ligatures;
+      color: $secondary;
+      font-family: 'north';
+      text-transform: lowercase;
+      display: inline-block;
+      border: none;
+    }
+  }
+
+  @at-root {
+    .north {
+      color: $black;
+    }
+  }
+
+  &--title {
+    font-size: 7em;
+  }
+
+  &--logo {
+    @extend %icon;
+    padding-right: .16em;
+    @include translateY(.119402985em);
+  }
+
+  &--wordmark {
+    @extend %icon;
+    font-size: .75em;
+
+    color: $primary;
+    text-transform: uppercase;
+    position: relative;
+
+    text-align: left;
+    display: inline-block;
+
+    font-family: 'homestead-one', 'homestead-regular';
+
+    &:before {
+      content: 'north';
+      text-transform: uppercase;
+      font-family: 'homestead-two', 'homestead-regular';
+      color: mix($black, $primary, 10%);
+      position: absolute;
+      left: 0;
+      top: -0.065em;
+    }
+    &:after {
+      content: 'north';
+      text-transform: uppercase;
+      font-family: 'homestead-three', 'homestead-regular';
+      color: mix($white, $primary, 10%);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
   }
 }
