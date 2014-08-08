@@ -54,7 +54,7 @@ $pt: 'pt', Helvetica, Arial, sans-serif;
 body {
   background-color: #97e52d;
   font-family: $pt;
-  font-size: 2em;
+  font-size: 2.25em;
 }
 
 * {
@@ -192,7 +192,8 @@ body {
 
 [data-state="sassy"],
 [data-state="rbenv"],
-[data-state="intro"] {
+[data-state="intro"],
+[data-state="alert"] {
   color: white;
 }
 
